@@ -136,13 +136,14 @@ Para realizar requisições à API, siga o exemplo abaixo utilizando `curl`:
 ```bash
 curl -X POST \
      -H "x-api-key: SOU_UM_GRAU_E_MEIO!" \
-     -F "file=@data/GP0STURQN_High_res-2048x1367-1.jpg" \
-     http://<SEU_SERVIDOR_IP>:4000/api/detector_de_fumaca --output output.jpg
+     -F "file=@{Caminho até a imagem .jpg}" \
+     http://107.174.69.144:4000/api/detector_de_fumaca --output output.jpg
 ```
 
 **Observações:**
-- Substitua `<SEU_SERVIDOR_IP>` pelo endereço IP público do seu servidor.
+- Substitua `107.174.69.144` pelo endereço IP público do seu servidor.
 - A imagem processada será salva como `output.jpg`.
+- Substitua o caminho até imagem pelo caminho até a imagem que você deseja classificar
 
 ## Por que Sou o Candidato Ideal?
 
