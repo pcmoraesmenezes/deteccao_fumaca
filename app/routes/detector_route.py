@@ -1,6 +1,6 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import Response
-from services.detector_de_fumaca import DetectorDeFumaca
+from app.services.detector_de_fumaca import DetectorDeFumaca
 
 router = APIRouter()
 detector_service = DetectorDeFumaca()
