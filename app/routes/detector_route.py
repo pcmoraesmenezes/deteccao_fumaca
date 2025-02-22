@@ -1,11 +1,17 @@
-from fastapi import APIRouter, File, UploadFile, HTTPException
+from fastapi import APIRouter, File, UploadFile, HTTPException, Header, Depends
 from fastapi.responses import Response
 from app.services.detector_de_fumaca import DetectorDeFumaca
 
 router = APIRouter()
 detector_service = DetectorDeFumaca()
 
-@router.post("/api/detector_de_fumaca")
+API_KEY = "SOU_UM_GRAU_E_MEIO!"
+async def verify_api_key(x_api_key: str = Header(...)):
+
+    if x_api_key != API_KEY:
+        raise HTTPException(status_code=403, detail="Chave API inválida. Acesso negado.")
+        
+@router.post("/api/detector_de_fumaca", dependencies=[Depends(verify_api_key)])
 async def detector_de_fumaca(file: UploadFile = File(...)):
 
     if file.content_type not in ["image/jpeg", "image/png"]:
