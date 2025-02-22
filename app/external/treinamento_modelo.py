@@ -1,3 +1,14 @@
+"""
+    Esse script é responsável pelo treinamento do modelo de classificador de fumaça ou incêndio.
+
+    Observação:
+    -   O treinamento foi feito utilizando o google colab devido a necessidade de uma GPU para treinamento.
+    -   O modelo treinado foi salvo no google drive.
+
+    Para acessar o colab com o treinamento do modelo, acesse o link: https://colab.research.google.com/drive/11wyOBE2OPTQOy-YViluhjtV-rNaXFUTG?usp=sharing
+"""
+
+
 from ultralytics import YOLO
 
 save_path = "/content/drive/MyDrive/case/model"
